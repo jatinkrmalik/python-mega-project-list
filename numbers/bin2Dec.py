@@ -7,17 +7,20 @@ def dec2bin(decnum):
         binnum = binnum+str(decnum%2)
         decnum = int(decnum/2)
     binnum = binnum+"1"
+    print(">>> ", end="")
     print(binnum[::-1])
 
 def bin2dec(binnum):
-    binlen = len(binnum)
-
-#    for i in range(binnum):
-        # write logic here
-
+    temp = binnum
+    decnum = 0
+    for i in range(len(str(binnum))):
+        decnum = decnum + pow(2,i)*(temp%10)
+        temp=temp//10
+    print(">>> ", end="")
+    print(decnum)
 
 while True:
-    print("\nBinary to Decimal to Binary\n(D) Decimal to Binary\n(B) Binary to Decimal\n(Q) Quit")
+    print("\n\t\tBinary to Decimal to Binary\n\n(D) Decimal to Binary\n(B) Binary to Decimal\n(Q) Quit")
     choice =input(">>> ").lower().rstrip()
     if choice=="q":
         break
