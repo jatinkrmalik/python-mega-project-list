@@ -1,6 +1,6 @@
 from decimal import *
 
-print("\t\tPI Calculator")
+print("\n\t\tPI Calculator")
 
 while(1):
     length = int(input("\nEnter a number to generate PI up to that many decimal places : "))
@@ -12,6 +12,6 @@ while(1):
     else:
         print("\nNumber should be less than 100")
 
-print("Result is : "+str(Decimal(355)/Decimal(113)))
+print("Value of PI upto "+str(length)+" digits is : "+str(Decimal(355)/Decimal(113)))
 
 # I know this is not the best way to calculate the value of Pi, I will revisit this after some research
