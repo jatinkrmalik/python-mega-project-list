@@ -1,3 +1,5 @@
+# Enter a number and have the program generate PI up to that many decimal places. Keep a limit to how far the program will go.
+
 from decimal import *
 
 print("\n\t\tPI Calculator")
@@ -12,6 +14,6 @@ while(1):
     else:
         print("\nNumber should be less than 100")
 
-print("Value of PI upto "+str(length)+" digits is : "+str(Decimal(355)/Decimal(113)))
+print("Value of PI upto "+str(length)+" digits is : "+str(Decimal(355)/Decimal(113))) # Best fractional representation of Pi
 
 # I know this is not the best way to calculate the value of Pi, I will revisit this after some research
