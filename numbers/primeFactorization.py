@@ -6,7 +6,7 @@ def findPrimeTill(num):
     primeList = []
     for i in range(2,num):
         flag=0
-        for j in range(2,i):
+        for j in range(2,int(sqrt(i))):
             if i%j == 0:
                 flag=1
         if flag==0:
@@ -19,20 +19,24 @@ def amIPrime(num):
         flag=0
         if num%i == 0:
             flag=1
-            print(str(num)+" is not a Prime number, hence calculating it's prime factors...\n")
+            print()
+            print(str(num)+" is not a Prime number, hence calculating it's Prime Factors...\n")
             return False
         if flag==0:
-            print(str(num)+" is a Prime number, hence it's prime factors doesn't exists!\n")
+            print()
+            print(str(num)+" is a Prime number, hence it's Prime Factors don't exist!\n")
             return True     
         
 def findPrimeFactors(num):
     primeList = findPrimeTill(int(num))
-    print("\tHere are the Prime factors of "+str(num)+":", end=' ')
+    print("\t>>>> Here are the Prime factors of "+str(num)+":", end=' ')
     for i in primeList:
         while num!= 1:
             if num%i == 0:
-                print(i, end=' ')
+                print(i, end='')
                 num=num/i
+                if(num != 1):
+                    print(' x ',end='')
             else:
                 break
     print('\n') # Empty line
