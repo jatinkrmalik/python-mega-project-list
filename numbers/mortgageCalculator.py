@@ -13,10 +13,10 @@ def calcEMI(loanAmt, rateInt, tenureM):
 
 print("\n\t\tMortgage Calculator\n")
 
-loanAmt = int(input("Enter the loan amount: INR "))
-rateInt = float(input("Enter the Rate of Interest(compounded): "))
-tenureY = int(input("Enter the tenure of loan (in years): "))
-tenureM = tenureY*12
+loanAmt = int(input("Enter the Loan amount: INR "))
+rateInt = float(input("Enter the Rate of Interest (in %): "))
+tenureY = int(input("Enter the tenure of the Loan (in years): "))
+tenureM = tenureY*12 # Converting years to month for ease of calculation
 
 calcEMI(loanAmt, rateInt, tenureM)
 
