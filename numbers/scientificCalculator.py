@@ -31,5 +31,5 @@ while True:
     else:
         print("Invalid choice, please choose again!\n")
 
-print("Thank you")
+print("\nThank you for using the calculator")
 
