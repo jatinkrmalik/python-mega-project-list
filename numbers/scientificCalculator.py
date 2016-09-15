@@ -1,33 +1,97 @@
 # Calculator
 # A simple calculator to do basic operators. Make it a scientific calculator for added complexity.
 
+from math import *
+
+def sum(a,b):
+    return a+b
+
+def sub(a,b):
+    return a-b
+
+def mult(a,b):
+    return a*b
+
+def div(a,b):
+    return a//b
+
+def mod(a,b):
+    return a%b
+
+def sqaure(a):
+    return a*a
+
+def cube(a):
+    return a*a*a
+
+def sine(angle):
+    return sin(radians(angle))
+
+def cosine(angle):
+    return cos(radians(angle))
+
+def tangent(angle):
+    return tan(radians(angle))
+
+def power(a,b):
+    return pow(a,b)
+
 while True:
-    print("\n\t\tCalculaor\n\n(A)dd\n(S)ubtract\n(M)ultiply\n(D)ivide\n(Mo)dulus\n(Sq)uare\n(Cu)be\n(Si)n\n(Co)s\n(Ta)n\n(P)ower\n(Q)uit")
+    print("\nCalculator\n\n(A)dd\n(S)ubtract\n(M)ultiply\n(D)ivide\n(Mo)dulus\n(Sq)uare\n(Cu)be\n(Si)n\n(Co)s\n(Ta)n\n(P)ower\n(Q)uit")
     choice =input(">>> ").lower().rstrip()
     if choice=="q":
         break
     elif choice=="a":
-        # Add code
+        a=int(input("Enter the first number: "))
+        b=int(input("Enter the second number: "))
+        print(">>> Sum of "+str(a)+" and "+str(b)+" is : "+str(sum(a,b)))
+        input("\nPress enter to continue...")
+
     elif choice=="s":
-        # Sub code
+        a=int(input("Enter the first number: "))
+        b=int(input("Enter the second number: "))
+        print(sub(a,b))
+ 
     elif choice=="m":
-        # Multiply code
+        a=int(input("Enter the first number: "))
+        b=int(input("Enter the second number: "))
+        print(mult(a,b))
+    
     elif choice=="d":
-        # Divide code
+        a=int(input("Enter the Divident: "))
+        b=int(input("Enter the Divisor: "))
+        print(div(a,b))
+    
     elif choice=="mo":
-        # Modulus code
+        a=int(input("Enter the Divident: "))
+        b=int(input("Enter the Divisor: "))
+        print(mod(a,b))
+
     elif choice=="sq":
-        # Square code
+        a=int(input("Enter the number: "))
+        print(sqaure(a))
+
     elif choice=="cu":
-        # Cube code
+        a=int(input("Enter the number: "))
+        print(cube(a))
+
     elif choice=="si":
-        # Sine code
+        angle=int(input("Enter the angle: "))
+        print(sine(angle))
+
     elif choice=="co":
-        # Cosine code
+        angle=int(input("Enter the angle: "))
+        print(cosine(angle))
+
     elif choice=="ta":
-        # Tangent code
+        angle=int(input("Enter the angle: "))
+        print(tangent(angle))
+
     elif choice=="p":
-        # Power code
+        a=int(input("Enter the base: "))
+        b=int(input("Enter the power: "))
+        print(pow(a,b))
+
     else:
         print("Invalid choice, please choose again!\n")
 
