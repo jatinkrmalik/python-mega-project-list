@@ -3,6 +3,7 @@
 
 from math import *
 
+# Defining calculator's function(s), feel free to suggest more.
 def sum(a,b):
     return a+b
 
@@ -37,6 +38,7 @@ def power(a,b):
     return pow(a,b)
 
 while True:
+    # Calculator menu
     print("\nCalculator\n\n(A)dd\n(S)ubtract\n(M)ultiply\n(D)ivide\n(Mo)dulus\n(Sq)uare\n(Cu)be\n(Si)n\n(Co)s\n(Ta)n\n(P)ower\n(Q)uit")
     choice =input(">>> ").lower().rstrip()
     if choice=="q":
@@ -50,47 +52,57 @@ while True:
     elif choice=="s":
         a=int(input("Enter the first number: "))
         b=int(input("Enter the second number: "))
-        print(sub(a,b))
- 
+        print(">>> Difference of "+str(a)+" and "+str(b)+" is : "+str(sub(a,b)))
+        input("\nPress enter to continue...")
+
     elif choice=="m":
         a=int(input("Enter the first number: "))
         b=int(input("Enter the second number: "))
-        print(mult(a,b))
-    
+        print(">>> Product of "+str(a)+" and "+str(b)+" is : "+str(mult(a,b)))
+        input("\nPress enter to continue...")
+
     elif choice=="d":
         a=int(input("Enter the Divident: "))
         b=int(input("Enter the Divisor: "))
-        print(div(a,b))
-    
+        print(">>> Division of "+str(a)+" and "+str(b)+" is : "+str(div(a,b)))
+        input("\nPress enter to continue...")
+
     elif choice=="mo":
         a=int(input("Enter the Divident: "))
         b=int(input("Enter the Divisor: "))
-        print(mod(a,b))
+        print(">>> Modulus of "+str(a)+" and "+str(b)+" is : "+str(mod(a,b)))
+        input("\nPress enter to continue...")
 
     elif choice=="sq":
         a=int(input("Enter the number: "))
-        print(sqaure(a))
+        print(">>> Square of "+str(a)+" is : "+str(sqaure(a)))
+        input("\nPress enter to continue...")
 
     elif choice=="cu":
         a=int(input("Enter the number: "))
-        print(cube(a))
+        print(">>> Cube of "+str(a)+" is : "+str(cube(a)))
+        input("\nPress enter to continue...")
 
     elif choice=="si":
         angle=int(input("Enter the angle: "))
-        print(sine(angle))
+        print(">>> Sine value of angle "+str(angle)+" is : "+str(sine(angle)))
+        input("\nPress enter to continue...")
 
     elif choice=="co":
         angle=int(input("Enter the angle: "))
-        print(cosine(angle))
+        print(">>> Cosine value of angle "+str(angle)+" is : "+str(cosine(angle)))
+        input("\nPress enter to continue...")
 
     elif choice=="ta":
         angle=int(input("Enter the angle: "))
-        print(tangent(angle))
+        print(">>> Tangent value of angle "+str(angle)+" is : "+str(tangent(angle)))
+        input("\nPress enter to continue...")
 
     elif choice=="p":
         a=int(input("Enter the base: "))
         b=int(input("Enter the power: "))
-        print(pow(a,b))
+        print(">>> Value of base "+str(a)+" for exponent "+str(b)+" is : "+str(pow(a,b)))
+        input("\nPress enter to continue...")
 
     else:
         print("Invalid choice, please choose again!\n")
