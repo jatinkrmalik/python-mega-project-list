@@ -4,13 +4,16 @@
 # Future scope - Finding coordinates from city name
 
 # Geopy lib for ease of use
-from geopy.distance import great_circle
+# from geopy.distance import great_circle
 from geopy.geocoders import Nominatim
+from geopy.distance import vincenty # added vincenty to improve accuracy
+
 
 print("\nGeo-Distance calculator!\n")
 
 def calcDistance(city1,city2):
-    return str(great_circle(city1, city2).kilometers)
+#   return str(great_circle(city1, city2).kilometers)
+    return str(vincenty(city1, city2).kilometers)
 
 def findAddress(city):
     geolocator = Nominatim()
@@ -29,4 +32,4 @@ c2Lg = input("Enter City 2's Longitude in decimal degrees: ")
 city2 = (c2Lt, c2Lg) # Saving as a tuple
 city2Ad = findAddress(city2)
 
-print("\t>>> Distance between\n\tCity 1 - "+city1Ad+"\n\tand\n\tCity 2 - "+city2Ad+"\n\tis - "+calcDistance(city1, city2)+" kilometers")
+print(">>> Distance between\n\tCity 1 - "+city1Ad+"\n\tand\n\tCity 2 - "+city2Ad+"\n\tis - "+calcDistance(city1, city2)+" kilometers")
