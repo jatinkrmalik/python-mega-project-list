@@ -5,15 +5,23 @@
 
 
 def factViaLoop(num):
-    print("Write loop magic here")
+    fact = int(1)
+    for i in range(1,num+1):
+        fact = fact*i
+    print("\nFactorial of "+str(num)+" = "+str(fact))
+    input("\nPress enter to continue...")
 
 def factViaRec(num):
-    print("Write recursion magic here")
+#    fact = int(1)
+#    if(num>=1):
+#        fact = num * factViaRec(num-1)
+#    print("\nFactorial of "+str(num)+" = "+str(fact))
+    input("Press enter to continue...")
 
 while(True):
     print("\n\t\tFactorial Calculator\n")
     num = int(input("Enter the number to find the factorial for: "))
-    ch = input("\nFind factorial via:\n(L)oop\n(R)ecursion\n(Q)uit\n>>>")
+    ch = input("\nFind factorial via:\n(L)oop\n(R)ecursion\n(Q)uit\n>>> ")
 
     if (ch.lower()=="l"):
         factViaLoop(num)
