@@ -17,17 +17,17 @@ def validateCC(cc):
 
     # Operating on even digits
     for i in range(0,len(cc),2):
-        evenLst.append(cc[i]*2)
+        evenLst.append(int(cc[i]*2))
 
     # Checking for double digits and summing them
     for i, evenNum in enumerate(evenLst):
         if(int(evenNum)>9):
-            evenLst[i]=((int(evenNum)%10)+(int(evenNum)//10)) 
+            evenLst[i]=(evenNum%10)+(evenNum//10) 
             # Only for once needed as max case could be 9x2=18
     
     # Sum of even list
-    for el in evenLst:
-        sum2 = sum2+int(el)
+    sum2=sum(evenLst)
+    print("Sum is :"+str(sum1+sum2))
 
     if(int(sum1+sum2)%10 == 0):
         print("\n>>> This is a valid credit card")
