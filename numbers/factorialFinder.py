@@ -8,15 +8,13 @@ def factViaLoop(num):
     fact = int(1)
     for i in range(1,num+1):
         fact = fact*i
-    print("\nFactorial of "+str(num)+" = "+str(fact))
-    input("\nPress enter to continue...")
+    return fact
 
 def factViaRec(num):
-#    fact = int(1)
-#    if(num>=1):
-#        fact = num * factViaRec(num-1)
-#    print("\nFactorial of "+str(num)+" = "+str(fact))
-    input("Press enter to continue...")
+    fact = int(1)
+    if(num>=1):
+        fact = num * factViaRec(num-1)
+    return fact
 
 while(True):
     print("\n\t\tFactorial Calculator\n")
@@ -24,10 +22,15 @@ while(True):
     ch = input("\nFind factorial via:\n(L)oop\n(R)ecursion\n(Q)uit\n>>> ")
 
     if (ch.lower()=="l"):
-        factViaLoop(num)
+        fact = factViaLoop(num)
+        print("\nFactorial of "+str(num)+" = "+str(fact))
+        input("\nPress enter to continue...")
 
     elif (ch.lower()=="r"):
-        factViaRec(num)
+        fact = factViaRec(num)
+        print("\nFactorial of "+str(num)+" = "+str(fact))
+        input("Press enter to continue...")
+
 
     elif (ch.lower()=="q"):
         break
