@@ -5,7 +5,27 @@
 
 def amIHappy(num):
     unhappy=[4, 16, 37, 58, 89, 145, 42, 20]
-
+    
+    for i in range(1,num+1):
+        if i in unhappy:
+            continue
+        else:
+            sos = 0 # sum of sqaures
+            x = i
+        while(True):
+            if(x>9):
+                temp = x%10
+                x = x//10
+                sos = sos + pow(temp,2)
+            else:
+                sos = sos * pow(x,2) # for the last remaining single digit
+                x = sos
+                if sos == 1:
+                    print(i, end="\t", flush=True)
+                elif x in unhappy:
+                    break
+                else:
+                    continue
 print("\n\t\tHappy Numbers Mining\n")
 num = int(input("How many happy numbers do you want: "))
-
+amIHappy(num)
