@@ -4,6 +4,9 @@
 # Future scope - Finding coordinates from city name
 
 # Geopy lib for ease of use
+# >>> To install geopy, run: pip3 install geopy
+
+
 # from geopy.distance import great_circle
 from geopy.geocoders import Nominatim
 from geopy.distance import vincenty # added vincenty to improve accuracy
