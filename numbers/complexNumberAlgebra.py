@@ -22,11 +22,11 @@ def negation(a, b):
 def helpme():
     print("\nIn python, you can put 'j' or 'J' after a number to make it imaginary, so you can write complex literals easily:\n2+3J, 5-6J, where 2+3J ~ 2+3i and 5-6J ~ 5-6i\n\nFun fact - 'i' is also used by mathematicians, physicists, and nearly all other scientists. If that isn't confusing enough, some use 'i' to represent the 'positive' square root of one, whereas 'j' is the 'negative' square root of one.")
 
+print("\n\n\tComplex Number Algebra\n")
+a = complex(input("Enter the first complex number in x+yj form: "))
+b = complex(input("Enter the second complex number in x+yj form: "))
 while(True):
-    print("\n\n\tComplex Number Algebra\n")
-    a = input("Enter the first complex number in x+yj form: ")
-    b = input("Enter the second complex number in x+yj form: ")
-    print("\nChose your operation:")
+    print("\nChoose your operation:")
     print("\n(A)dd\n(S)ubtract\n(M)ultiply\n(D)ivide\n(N)egation\n(H)elp\n(Q)uit")
     ch = input(">> Enter your choice: ").lower().rstrip()
 
