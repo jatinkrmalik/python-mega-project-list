@@ -15,7 +15,7 @@ def mergeSort(numList):
         k = 0
 
         while i<len(leftList) and j <len(rightList):
-            if leftList[i]<rightList[j]:
+            if int(leftList[i])<int(rightList[j]):
                 numList[k] = leftList[i]
                 i += 1
             else:
@@ -35,7 +35,6 @@ def mergeSort(numList):
         return numList
 
 def bubbleSort(numList):
-    # Do the magic here
     ps = 0
     while(True):
         swpC = 0
