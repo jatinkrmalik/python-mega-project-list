@@ -11,7 +11,7 @@ def bubbleSort(numList):
         swpC = 0
         for i in range(len(numList)-1):
             j = i + 1
-            if numList[j]<numList[i]:
+            if int(numList[j])<int(numList[i]):
                 numList[i], numList[j] = numList[j], numList[i]
                 swpC += 1
         ps += 1
