@@ -1,11 +1,10 @@
 # Count vowels
 # Enter a string and the program counts the number of vowels in the text. For added complexity have it report a sum of each vowel found.
 
-
 print("\n\t\tLet's count the vowels\n")
 str = input("Enter a string to count the vowels: ")
 
-vowels = {"a":0, "e":0, "i":0, "o":0, "u":0}
+vowels = {"a":0, "e":0, "i":0, "o":0, "u":0} # using a python dictionary
 
 for alpha in str.lower():
     if alpha == "a":
@@ -23,7 +22,11 @@ for alpha in str.lower():
     elif alpha == "u":
             vowels["u"] += 1
 
-print(vowels)
+print("\nVowel count in the string above is: \n")
+for vowel in vowels: # pretty print
+    print(vowel," : ", vowels[vowel])
+
+print() # asthetics!
 
 
 
