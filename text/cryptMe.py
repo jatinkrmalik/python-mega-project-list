@@ -32,7 +32,7 @@ def ceasar(msg,mode): # To imporve the acceptance of both upper and lower case
         print("\nCeaser cipher for your message = ",op)
         
     elif mode == "d": # decryption
-        ch = input("\nDo you want to decrypt using :\n(K)ey\n(B)rute force method\n>>>Enter your choice: ")
+        ch = input("\nDo you want to decrypt using :\n(K)ey\n(B)rute force method\n\n>>>Enter your choice: ")
         if ch.lower() == "k":
             key = int(input("Enter the key to decrypt the ceasar cipher: "))
             for i in range(len(msg)):
@@ -43,7 +43,7 @@ def ceasar(msg,mode): # To imporve the acceptance of both upper and lower case
             print("\nCeaser decryption for your message = ",op)
 
         else:
-            print("\nAttemping Brute force on:\n>>>",msg,end="\n")
+            print("\nAttemping Brute force on:\n>>>",msg,end="\n\n")
             for key in range(26):
                 op = ""
                 for i in range(len(msg)):
@@ -52,7 +52,7 @@ def ceasar(msg,mode): # To imporve the acceptance of both upper and lower case
                     else:
                         op = op+msg[i]
 
-                print("\nKey = "+str(key)+"\nMessage = ", op)
+                print("Key = ",'{:2}'.format(key),"| Message = ", op)
 
 print("\n\t\tSecret messenger\n")
 ch = input("(E)ncrypt my message\n(D)ecrypt my message\n(Q)uit\n\n>>>Enter your choice: ")
@@ -93,3 +93,5 @@ elif ch == 'd':
 
 else:
     print("Exiting...")
+
+print() # asthetics
