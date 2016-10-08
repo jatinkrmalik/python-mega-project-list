@@ -8,6 +8,8 @@ for i in range(26):
     alphaList.append(chr(j)) # populating list with alphabets
     j += 1
 
+
+# Pending encryptions, will come back after some research
 """def vigenere(msg,mode):
     if mode == "e": # encryption
 
