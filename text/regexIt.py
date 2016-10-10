@@ -3,15 +3,19 @@
 
 import re # for ease of regex
 
+# Investigate why function call fails
+"""
 def regexQuery(txtStr, ptrn):
     result = re.search(ptrn, txtStr)
     print(result)
-
+"""
 
 print("\n\t\tRegex query tool")
 txtStr = input("\nEnter your text string: ")
 ptrn = input("\nEnter your regex pattern: ")
+# regexQuery(txtStr, ptrn)
 
-regexQuery(txtStr, ptrn)
+rs = re.search(ptrn, txtStr)
+print(rs.group())
 
 
