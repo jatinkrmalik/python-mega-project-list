@@ -18,13 +18,13 @@ ch = input("(O)pen a new file\n(E)dit an exiting file\n(Q)uit\n>>>Enter your cho
 
 if ch == "o":
     cls() # to clear the screen
-    str = input("Enter your text below:\n\n")
+    plainText = input("Enter your text below:\n\n")
     _ch = input("\n--------\n(S)ave file\n(Q)uit without saving\n>>>Enter your choice: ").lower()
     
     if _ch == "s":
         fileName = input("Enter your file name: ")
         fo = open(fileName+".txt", "wb")
-        fo.write(str)
+        fo.write(bytes(plainText, 'UTF-8'))
         fo.close()
 
     elif _ch == "q":
