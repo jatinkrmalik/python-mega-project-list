@@ -51,4 +51,5 @@ if ch == "e":
     elif _ch == "q":
         exit()
 
-
+elif ch == "q":
+    exit()
