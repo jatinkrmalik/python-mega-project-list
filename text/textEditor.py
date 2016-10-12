@@ -4,7 +4,7 @@
 
 import os
 
-def cls():
+def cls(): # to clear the screen
     os.system('cls' if os.name=='nt' else 'clear')
 
 try: # to check if directory exists
@@ -15,13 +15,12 @@ except FileExistsError:
 
 while True:
     print("\n\t\tText Editor")
-
     ch = input("\n(O)pen a new file\n(E)dit an exiting file\n(Q)uit\n\n>>>Enter your choice: ").lower()
-
     if ch == "o":
-        cls() # to clear the screen
+        cls()
         print("Enter your text below (Press Ctrl+C to escape from editor):\n--------\n")
     
+        # To take multiline input from user (more like a para)
         try:
             textPara = ""
             while True:
