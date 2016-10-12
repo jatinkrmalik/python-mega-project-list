@@ -14,12 +14,12 @@ try: # to check if directory exists
 except FileExistsError:
     os.chdir("documents")
 
-ch = input("(O)pen a new file\n(E)dit an exiting file\n(Q)uit\n>>>Enter your choice: ").lower()
+ch = input("\n-------\n(O)pen a new file\n(E)dit an exiting file\n(Q)uit\n>>>Enter your choice: ").lower()
 
 if ch == "o":
     cls() # to clear the screen
     plainText = input("Enter your text below:\n\n")
-    _ch = input("\n--------\n(S)ave file\n(Q)uit without saving\n>>>Enter your choice: ").lower()
+    _ch = input("\n--------\n(S)ave file\t(Q)uit without saving\n>>>Enter your choice: ").lower()
     
     if _ch == "s":
         fileName = input("Enter your file name: ")
@@ -29,4 +29,26 @@ if ch == "o":
 
     elif _ch == "q":
         exit()
-     
+
+if ch == "e":
+    fileName = input("Enter the name of file you want to open: ")
+    fo = open(fileName+".txt", "rb")
+    cls()
+    print("Content of "+fileName+" is:\n--------\n")
+    print(fo.read())
+    fo.close()
+    _ch = input("\n--------\n(E)dit this file\t(Q)uit\n>>>Enter your choice: ").lower()
+
+    if _ch == "e":
+        plainText = input("Enter the text you want to add below:\n\n")
+        fo = open(fileName+".txt", "ab+")
+        fo.write(bytes(" "+plainText, 'UTF-8'))
+        print("\nUpdated content of file is: \n")
+        fo.seek(0)
+        print(fo.read())
+        fo.close()
+
+    elif _ch == "q":
+        exit()
+
+
