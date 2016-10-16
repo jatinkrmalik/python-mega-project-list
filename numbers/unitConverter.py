@@ -54,7 +54,39 @@ def tempConv():
 
 def lenConv():
     cls()
-    print("\n\tLength Converter\n")
+    while(True):
+        print("\n\tLength Converter\n")
+        unit1 = input ("Which unit would you like to convert from: ")
+        unit2 = input ("Which unit would you like to convert to: ")
+        num1 = input ("Enter your value: " )
+
+        ##Calculations  
+        if unit1 == "cm" and unit2 == "m":
+            ans = float(num1)/100       
+        elif unit1 == "mm" and unit2 == "cm":
+            ans = float(num1)/10
+        elif unit1 == "m" and unit2 == "cm":
+            ans = float(num1)*100
+        elif unit1 == "cm" and unit2 == "mm":
+            ans = float(num1)*10
+        elif unit1 == "mm" and unit2 == "m":
+            ans = float(num1)/1000
+        elif unit1 == "m" and unit2 == "mm":
+            ans = float(num1)*1000  
+        elif unit1 == "km" and unit2 == "m":
+            ans = float(num1)*1000
+        elif unit1 == "m" and unit2 == "km":
+            ans = float(num1)/1000
+        elif unit1 == "mm" and unit2 == "km":
+            ans = float(num1)/1000000
+        else:
+            print("\nWrong choice entered, please try again!")
+
+        print("\nThe length",num1,unit1,"=",ans,unit2)
+        
+        rep = input("\nDo you want to continue? (y/n) ").lower()
+        if rep == "n":
+            break
 
 def areaConv():
     cls()
