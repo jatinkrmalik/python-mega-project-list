@@ -1,6 +1,8 @@
 # Alarm Clock
 # A simple clock where it ~~plays a sound~~ displays a banner after X number of minutes/seconds or at a particular time.
 
+# To-do: Add an option to add a custom date too!
+
 import os
 from time import sleep, strftime
 from random import randint
