@@ -12,18 +12,25 @@ def getLoc():
     j = json.loads(r.text)
     lat = str(j['latitude'])
     lon = str(j['longitude'])
-    return lat,lon
+    city = str(j['city'])
+    return lat,lon,city
 
 print("\n\t\tWeather Channel!\n")
 ch = input("Get me weather for:\n(C)urrent location\n(P)in code\n\n>>Enter your choice: ").lower()
 
 if ch == 'c':
-    print("Fetching location...")
-    lat,lon = getLoc()
-    print("Getting weather for Latitude:",lat,"and Longitude",lon,"...")
-    wPage = urlopen("https://weather.com/en-IN/weather/today/l/"+lat+","+lon)
+    print("\nFetching location...")
+    lat, lon, city = getLoc()
+    print("\nGetting weather for",city," -  Latitude:",lat,"and Longitude",lon,"...")
+    wPage = urlopen("https://darksky.net/"+lat+","+lon)
     soup = bs(wPage, "html5lib")
-    print(soup.prettify())
+    temp = soup.select("body.forecast #title span.temp")[0].get_text()[:2:]
+    summary = soup.select("body.forecast #title span.summary")[0].get_text()
+    msg = soup.select("body.forecast #title .next.swap")[0].get_text()
+    print()
+    print("#"*50)
+    print("\nWeather at",city," = ",temp,"degree celcius |",summary,"|",msg)
+    print("#"*50)
 
 elif ch == 'p':
     pin = input("Enter the pin code :")
