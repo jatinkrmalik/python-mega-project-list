@@ -24,6 +24,14 @@ def getLocByPin(pincode):
     address = location.address
     return lat,lon,address
 
+def getWeather(lat,lon):
+    wPage = urlopen("https://darksky.net/"+lat+","+lon)
+    soup = bs(wPage, "html5lib")
+    temp = soup.select("body.forecast #title span.temp")[0].get_text()[:2:]
+    summary = soup.select("body.forecast #title span.summary")[0].get_text()
+    msg = soup.select("body.forecast #title .next.swap")[0].get_text()
+    return temp, summary, msg
+
 print("\n\t\tWeather Channel!\n")
 ch = input("Get me weather for:\n(C)urrent location\n(P)in code\n\n>>Enter your choice: ").lower()
 
@@ -31,26 +39,18 @@ if ch == 'c':
     print("\nFetching location...")
     lat, lon, city = getLocAuto()
     print("\nGetting weather for",city," -  Latitude:",lat,"and Longitude",lon,"...")
-    wPage = urlopen("https://darksky.net/"+lat+","+lon)
-    soup = bs(wPage, "html5lib")
-    temp = soup.select("body.forecast #title span.temp")[0].get_text()[:2:]
-    summary = soup.select("body.forecast #title span.summary")[0].get_text()
-    msg = soup.select("body.forecast #title .next.swap")[0].get_text()
+    temp, summary, msg = getWeather(lat, lon)
     print()
     print("#"*50)
-    print("\nWeather at",city," = ",temp,"degree celcius |",summary,"|",msg)
+    print("\n>>>Weather at",city,"<<<\n",temp,"degree celcius\n",summary,msg)
     print("#"*50)
 
 elif ch == 'p':
     pincode = input("Enter the pin code :")
     lat,lon,address = getLocByPin(pincode)
     print("Getting weather for",address," -  Latitude:",lat,"and Longitude",lon,"...")
-    wPage = urlopen("https://darksky.net/"+lat+","+lon)
-    soup = bs(wPage, "html5lib")
-    temp = soup.select("body.forecast #title span.temp")[0].get_text()[:2:]
-    summary = soup.select("body.forecast #title span.summary")[0].get_text()
-    msg = soup.select("body.forecast #title .next.swap")[0].get_text()
+    temp, summary, msg = getWeather(lat, lon)
     print()
     print("#"*50)
-    print("\n>>>Weather at",address,"<<<\n\n\tk",temp,"degree celcius\n",summary,"\n",msg)
+    print("\n>>>Weather at",address,"<<<\n",temp,"degree celcius\n",summary,msg)
     print("#"*50)
