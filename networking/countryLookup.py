@@ -6,6 +6,14 @@ import json
 from time import sleep
 import os
 
+def cls(): # to clear the screen
+    os.system('cls' if os.name=='nt' else 'clear')
+
+for i in range(6):
+    cls()
+    print("Locating"+str(".")*i)
+    sleep(0.3)
+
 send_url = 'http://freegeoip.net/json'
 r = requests.get(send_url)
 j = json.loads(r.text)
