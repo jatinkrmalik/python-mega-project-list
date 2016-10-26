@@ -3,13 +3,13 @@
 
 # Optional: Organize the indexed content and don't allow duplicates. Have it put the results into an easily searchable index file.
 
-import requests
+import requests # pip3 install requests
 from urllib.request import urlopen
-from bs4 import BeautifulSoup as bs
+from bs4 import BeautifulSoup as bs # pip3 install bs4
 
 url = input("Enter the website url you want to scrap stuff from:\n")
 page = urlopen(url)
 # page = requests.get(url)
-soup = bs(page.read().decode('latin-1', 'ignore'), 'html5lib')
+soup = bs(page.read())
 
 print(soup.select("a"))
