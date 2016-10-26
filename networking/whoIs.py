@@ -32,11 +32,11 @@ def whoisDom(domain):
         print(val[i].get_text())
 
     print("\n# Name Servers:")
-    print(">>>",val[7].get_text(),":", val[8].get_text())
-    print(">>>",val[9].get_text(),":", val[10].get_text())
+    print(">>>",val[7].get_text().replace("\n",""),":", val[8].get_text().replace("\n",""))
+    print(">>>",val[9].get_text().replace("\n",""),":", val[10].get_text().replace("\n",""))
     
     # to continue x = $(".queryResponseBodyValue") in console and check index for Registrar Data
-`   return 0
+    return 0
 
 def whoisIP(ipadr):
     print("Fetching information for",ipadr)
