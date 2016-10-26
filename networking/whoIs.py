@@ -34,6 +34,11 @@ def whoisDom(domain):
     print("\n# Name Servers:")
     print(">>>",val[7].get_text().replace("\n",""),":", val[8].get_text().replace("\n",""))
     print(">>>",val[9].get_text().replace("\n",""),":", val[10].get_text().replace("\n",""))
+   
+    print("\n# Similar Domains:")
+    simDoms = val[11].get_text().replace("\n","").split(" | ")
+    for sDom in simDoms:
+        print(">>>",sDom) 
     
     # to continue x = $(".queryResponseBodyValue") in console and check index for Registrar Data
     return 0
