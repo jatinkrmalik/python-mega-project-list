@@ -43,7 +43,7 @@ def whoisDom(domain):
     print("\n# Registrar Data:")
 
     # Registrant Contact Information:
-    print(val[12].select(".rawWhois > div > strong")[0].get_text())
+    print("\n>>> "+val[12].select(".rawWhois > div > strong")[0].get_text())
     for i in range(20):
         if i%2==0:
             print(val[12].select(".rawWhois .row div")[i].get_text(),end=":")
@@ -51,7 +51,7 @@ def whoisDom(domain):
             print(val[12].select(".rawWhois .row div")[i].get_text(),end="\n")
 
     # Administrative Contact Information:
-    print(val[12].select(".rawWhois > div > strong")[1].get_text())
+    print("\n>>> "+val[12].select(".rawWhois > div > strong")[1].get_text())
     for i in range(20,40):
         if i%2==0:
             print(val[12].select(".rawWhois .row div")[i].get_text(),end=":")
@@ -59,7 +59,7 @@ def whoisDom(domain):
             print(val[12].select(".rawWhois .row div")[i].get_text(),end="\n")
 
     # Technical Contact Information:
-    print(val[12].select(".rawWhois > div > strong")[2].get_text())
+    print("\n>>> "+val[12].select(".rawWhois > div > strong")[2].get_text())
     for i in range(20,40):
         if i%2==0:                                                                       
             print(val[12].select(".rawWhois .row div")[i].get_text(),end=":")
