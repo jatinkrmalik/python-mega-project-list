@@ -66,8 +66,9 @@ def whoisDom(domain):
         else:
             print(val[12].select(".rawWhois .row div")[i].get_text(),end="\n")
 
-
-    # to continue x = $(".queryResponseBodyValue") in console and check index for Registrar Data
+    print("-"*10)
+    print(val[12].select(".rawWhois > div")[3].get_text())
+    print() # asthetics
     return 0
 
 def whoisIP(ipadr):
