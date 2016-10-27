@@ -39,7 +39,34 @@ def whoisDom(domain):
     simDoms = val[11].get_text().replace("\n","").split(" | ")
     for sDom in simDoms:
         print(">>>",sDom) 
-    
+   
+    print("\n# Registrar Data:")
+
+    # Registrant Contact Information:
+    print(val[12].select(".rawWhois > div > strong")[0].get_text())
+    for i in range(20):
+        if i%2==0:
+            print(val[12].select(".rawWhois .row div")[i].get_text(),end=":")
+        else:
+            print(val[12].select(".rawWhois .row div")[i].get_text(),end="\n")
+
+    # Administrative Contact Information:
+    print(val[12].select(".rawWhois > div > strong")[1].get_text())
+    for i in range(20,40):
+        if i%2==0:
+            print(val[12].select(".rawWhois .row div")[i].get_text(),end=":")
+        else:
+            print(val[12].select(".rawWhois .row div")[i].get_text(),end="\n")
+
+    # Technical Contact Information:
+    print(val[12].select(".rawWhois > div > strong")[2].get_text())
+    for i in range(20,40):
+        if i%2==0:                                                                       
+            print(val[12].select(".rawWhois .row div")[i].get_text(),end=":")
+        else:
+            print(val[12].select(".rawWhois .row div")[i].get_text(),end="\n")
+
+
     # to continue x = $(".queryResponseBodyValue") in console and check index for Registrar Data
     return 0
 
