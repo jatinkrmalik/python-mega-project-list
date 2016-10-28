@@ -12,7 +12,7 @@ def cls(): # to clear the screen
 # Use https://who.is/whois/<domain> for domain name info
 # Use https://who.is/whois-ip/ip-address/<IP ADDRESS> for ip address info
 
-def whoisDom(domain):
+def whoisDom(domain): # to get whois via domain
     print("Fetching information for",domain)
     domPage = urlopen("https://who.is/whois/"+str(domain))
     soup = bs(domPage, "html5lib")
@@ -69,12 +69,16 @@ def whoisDom(domain):
     print("-"*10)
     print(val[12].select(".rawWhois > div")[3].get_text())
     print() # asthetics
-    return 0
-
-def whoisIP(ipadr):
+    
+def whoisIP(ipadr): # to get whois via IP
     print("Fetching information for",ipadr)
-    # do magic here
-    return 0
+    IPPage = urlopen("https://who.is/whois-ip/ip-address/"+str(ipadr))
+    soup = bs(IPPage, "html5lib")
+
+    print("\n# IP Whois:")
+    key = soup.select(".col-md-12.queryResponseBodyKey > pre")
+    print(key[0].get_text())
+    print() #asthetics
 
 while(True):
     cls()
