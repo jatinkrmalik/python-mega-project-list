@@ -18,9 +18,6 @@ from urllib.request import urlopen
 def cls(): # to clear the screen
     os.system('cls' if os.name=='nt' else 'clear')
 
-# Use https://who.is/whois/<domain> for domain name info
-# Use https://who.is/whois-ip/ip-address/<IP ADDRESS> for ip address info
-
 def whoisDom(domain): # to get whois via domain
     print("Fetching information for",domain)
     domPage = urlopen("https://who.is/whois/"+str(domain))
