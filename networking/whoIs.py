@@ -8,6 +8,8 @@
 # 2. Beautiful Soup library - To install: sudo pip3 install bs4
 # 3. Requests library       - To install: sudo pip3 install requests
 
+# To save output in a text or log file, execute whoIs.py via command: python3 whoIs.py | tee output.txt
+
 import os
 import requests
 from bs4 import BeautifulSoup as bs
