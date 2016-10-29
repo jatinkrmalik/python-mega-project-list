@@ -89,16 +89,14 @@ while(True):
         print("\nSearch whois information by Domain name:")
         domain = input(">>> Enter the domain name followed by the suffix (.com/.io):\n>>> ")
         whoisDom(domain)
-        break
 
     elif ch == "i":
         print("\nSearch whois information by IP address:")
         ipadr = input(">>> Enter the IP address:\n")
         whoisIP(ipadr)
-        break
 
     else:
-        print("\n\nWrong choice entered!")
+        print("\n\nWrong choice entered!\n")
 
     input("Press <Enter> to try again or Ctrl+Z to exit")
 
