@@ -28,6 +28,7 @@ def getWeather(lat,lon):
     wPage = urlopen("https://darksky.net/"+lat+","+lon)
     soup = bs(wPage, "html5lib")
     temp = soup.select("body.forecast #title span.temp")[0].get_text()[:2:]
+    # check this line above ^ | I am tired of encoding errors :(
     summary = soup.select("body.forecast #title span.summary")[0].get_text()
     msg = soup.select("body.forecast #title .next.swap")[0].get_text()
     return temp, summary, msg
