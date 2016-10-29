@@ -1,6 +1,13 @@
 # Whois Search Tool
 # Enter an IP or host address and have it look it up through whois and return the results to you.
 
+# Created by: Jatin Kumar Malik | jatinkrmalik(at)gmail(dot)com
+
+# Pre-requisites:
+# 1. Python 3               - To install: sudo apt-get install python3
+# 2. Beautiful Soup library - To install: sudo pip3 install bs4
+# 3. Requests library       - To install: sudo pip3 install requests
+
 import os
 import requests
 from bs4 import BeautifulSoup as bs
