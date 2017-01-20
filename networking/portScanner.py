@@ -11,14 +11,24 @@ while(True):
     cls()
     print("\t\tPort Scanner\n")
 
-    ch = input("(L)ist my open ports\n(S)can for an open port\n(Q)uit\n\n>>>Enter your choice: ").lower()
+    ch = input("(L)ist my open ports\n(S)can for open port(s)\n(Q)uit\n\n>>>Enter your choice: ").lower()
 
     if ch == "l":
-        print("\n\n# All open ports on this machine are:\n\n")
-        os.system("netstat -lntu")
+        print("\n\n# All open ports on this machine are:\n")
+        os.system("netstat -lntu") 
+        # -l = only services which are listening on some port
+        # -n = show port number, don't try to resolve the service name
+        # -t = tcp ports
+        # -u = udp ports
 
     elif ch == "s":
-        print("Todo Port scan")
+        ipadr = input("\n\n>>>Please enter the IP address of the computer(press <Enter> for localhost): ")
+        if ipadr == "":
+            ipadr = "localhost"
+        port = input("\n>>>>Please enter the port number or port range(1-8080): ")
+        print("\n\n# Here are your results:\n")
+        os.system("nc -zv "+ipadr+" "+port)
+
 
     elif ch == "q":
         exit()
