@@ -15,8 +15,13 @@ def checkSite(weburl, timeInt):
     while(True):
         try:
             status = urlopen(weburl).getcode()
-        except URLError:
+        except URLError as e:
             os.system("whiptail --title 'Website is DOWN!' --msgbox 'Press Ok to continue' 8 78")
+
+        except HTTPError as e:
+            os.system("whiptail --title 'Website is DOWN!' --msgbox 'Press Ok to continue' 8 78")
+            print(e.code)
+
         else:
             print("Website is UP! - "+str(status))
         
